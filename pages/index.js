@@ -1,209 +1,337 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 export default function Home() {
   return (
-    <div className="container">
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Home</title>
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossOrigin="anonymous"
+        />
+        <script
+          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+          crossOrigin="anonymous"
+        ></script>
+        <script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+          crossOrigin="anonymous"
+        ></script>
+        <script
+          src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div className="container">
+          <a className="navbar-brand" href="#">
+            Start Bootstrap
           </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarResponsive">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item active">
+                <a className="nav-link" href="#">
+                  Home
+                  <span className="sr-only">(current)</span>
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Services
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </main>
+      </nav>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-3">
+            <h1 className="my-4">Shop Name</h1>
+            <div className="list-group">
+              <a href="#" className="list-group-item">
+                Category 1
+              </a>
+              <a href="#" className="list-group-item">
+                Category 2
+              </a>
+              <a href="#" className="list-group-item">
+                Category 3
+              </a>
+            </div>
+          </div>
+
+          <div className="col-lg-9">
+            <div
+              id="carouselExampleIndicators"
+              className="carousel slide my-4"
+              data-ride="carousel"
+            >
+              <ol className="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  className="active"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="1"
+                ></li>
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="2"
+                ></li>
+              </ol>
+              <div className="carousel-inner" role="listbox">
+                <div className="carousel-item active">
+                  <img
+                    className="d-block img-fluid"
+                    src="http://placehold.it/900x350"
+                    alt="First slide"
+                  />
+                </div>
+                <div className="carousel-item">
+                  <img
+                    className="d-block img-fluid"
+                    src="http://placehold.it/900x350"
+                    alt="Second slide"
+                  />
+                </div>
+                <div className="carousel-item">
+                  <img
+                    className="d-block img-fluid"
+                    src="http://placehold.it/900x350"
+                    alt="Third slide"
+                  />
+                </div>
+              </div>
+              <a
+                className="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="sr-only">Previous</span>
+              </a>
+              <a
+                className="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="sr-only">Next</span>
+              </a>
+            </div>
+
+            <div className="row">
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#">
+                    <img
+                      className="card-img-top"
+                      src="http://placehold.it/700x400"
+                      alt=""
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item One</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Amet numquam aspernatur!
+                    </p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">
+                      &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#">
+                    <img
+                      className="card-img-top"
+                      src="http://placehold.it/700x400"
+                      alt=""
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item Two</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Amet numquam aspernatur! Lorem ipsum dolor sit amet.
+                    </p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">
+                      &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#">
+                    <img
+                      className="card-img-top"
+                      src="http://placehold.it/700x400"
+                      alt=""
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item Three</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Amet numquam aspernatur!
+                    </p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">
+                      &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#">
+                    <img
+                      className="card-img-top"
+                      src="http://placehold.it/700x400"
+                      alt=""
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item Four</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Amet numquam aspernatur!
+                    </p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">
+                      &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#">
+                    <img
+                      className="card-img-top"
+                      src="http://placehold.it/700x400"
+                      alt=""
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item Five</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Amet numquam aspernatur! Lorem ipsum dolor sit amet.
+                    </p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">
+                      &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#">
+                    <img
+                      className="card-img-top"
+                      src="http://placehold.it/700x400"
+                      alt=""
+                    />
+                  </a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item Six</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Amet numquam aspernatur!
+                    </p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">
+                      &#9733; &#9733; &#9733; &#9733; &#9734;
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer className="py-5 bg-dark">
+        <div className="container">
+          <p className="m-0 text-center text-white">
+            Copyright &copy; Your Website 2019
+          </p>
+        </div>
       </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
     </div>
-  )
+  );
 }
