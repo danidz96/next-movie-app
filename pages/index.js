@@ -5,8 +5,9 @@ import SideMenu from '../components/sideMenu';
 import Carousel from '../components/carousel';
 import MovieList from '../components/movieList';
 import Footer from '../components/footer';
+import { getMovies } from '../actions';
 
-const Home = () => (
+const Home = (props) => (
   <div>
     <Head>
       <title>Home</title>
@@ -42,7 +43,7 @@ const Home = () => (
           <div className="col-lg-9">
             <Carousel />
             <div className="row">
-              <MovieList />
+              <MovieList movies={props.movies} />
             </div>
           </div>
         </div>
@@ -58,5 +59,10 @@ const Home = () => (
     </style>
   </div>
 );
+
+Home.getInitialProps = async () => {
+  const movies = getMovies();
+  return { movies };
+};
 
 export default Home;
