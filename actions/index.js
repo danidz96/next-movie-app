@@ -38,3 +38,11 @@ export const getMovies = () => {
   // Create async functionality
   return MOVIE_DATA;
 };
+
+export const getMovieById = (id) => {
+  return new Promise((resolve, reject) => {
+    const movie = MOVIE_DATA.find((movie) => movie.id === id);
+
+    setTimeout(() => resolve(movie), 50);
+  });
+};
