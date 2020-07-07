@@ -1,4 +1,3 @@
-import React from 'react';
 import SideMenu from '../components/sideMenu';
 import Carousel from '../components/carousel';
 import MovieList from '../components/movieList';

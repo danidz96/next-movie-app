@@ -1,5 +1,3 @@
-import React from 'react';
-
 const MovieListItem = ({ movie }) => {
   const shorten = (text, maxLength) => {
     if (text && text.length > maxLength) {
