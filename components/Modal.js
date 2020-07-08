@@ -5,6 +5,10 @@ const Modal = (props) => {
 
   const submitModal = () => {
     alert('Submitting Modal');
+    closeModal();
+  };
+
+  const closeModal = () => {
     closeButton.current.click();
   };
 

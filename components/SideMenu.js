@@ -5,9 +5,10 @@ import { createMovie } from '../actions';
 const SideMenu = ({ categories }) => {
   const handleCreateMovie = (movie) => {
     createMovie(movie).then((movies) => {
-      console.log(JSON.stringify(movies));
+      console.log(movies);
     });
   };
+
   return (
     <div>
       <Modal hasSubmit={false}>
