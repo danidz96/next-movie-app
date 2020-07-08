@@ -13,7 +13,6 @@ const Modal = (props) => {
       <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#modal">
         Create Movie
       </button>
-
       <div className="modal fade" id="modal" tabIndex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
@@ -30,9 +29,11 @@ const Modal = (props) => {
               <button ref={closeButton} type="button" className="btn btn-secondary" data-dismiss="modal">
                 Close
               </button>
-              <button onClick={submitModal} type="button" className="btn btn-primary">
-                Save changes
-              </button>
+              {props.hasSubmit && (
+                <button onClick={submitModal} type="button" className="btn btn-primary">
+                  Save changes
+                </button>
+              )}
             </div>
           </div>
         </div>
