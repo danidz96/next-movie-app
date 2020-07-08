@@ -2,13 +2,13 @@ import SideMenu from '../components/sideMenu';
 import Carousel from '../components/carousel';
 import MovieList from '../components/movieList';
 import Footer from '../components/footer';
-import { getMovies } from '../actions';
+import { getMovies, getCategories } from '../actions';
 
-const Home = ({ movies, images }) => (
+const Home = ({ movies, images, categories }) => (
   <div className="container">
     <div className="row">
       <div className="col-lg-3">
-        <SideMenu />
+        <SideMenu categories={categories} />
       </div>
       <div className="col-lg-9">
         <Carousel images={images} />
@@ -22,13 +22,14 @@ const Home = ({ movies, images }) => (
 
 Home.getInitialProps = async () => {
   const movies = await getMovies();
+  const categories = await getCategories();
   const images = movies.map((movie) => ({
     id: `image-${movie.id}`,
     url: movie.cover,
     name: movie.name,
   }));
 
-  return { movies, images };
+  return { movies, images, categories };
 };
 
 export default Home;
