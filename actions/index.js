@@ -19,11 +19,10 @@ export const getMovies = () => {
 };
 
 export const getMovieById = (id) => {
-  return new Promise((resolve, reject) => {
-    const movie = MOVIE_DATA.find((movie) => movie.id === id);
-
-    setTimeout(() => resolve(movie), 50);
-  });
+  return axios
+    .get(`${BASE_URL}/api/v1/movies/${id}`)
+    .then((res) => res.data)
+    .catch((error) => console.log(error));
 };
 
 export const getCategories = () => {
