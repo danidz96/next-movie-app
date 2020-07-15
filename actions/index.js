@@ -41,3 +41,7 @@ export const createMovie = (movie) => {
     .then((res) => res.data)
     .catch((err) => console.log(err));
 };
+
+export const deleteMovie = (id) => {
+  return axios.delete(`${BASE_URL}/api/v1/movies/${id}`).then((res) => res.data);
+};

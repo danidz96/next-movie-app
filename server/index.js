@@ -1,7 +1,6 @@
 const next = require('next');
 const express = require('express');
 const bodyParser = require('body-parser');
-const moviesData = require('./data.json');
 const filePath = './data.json';
 const fs = require('fs');
 const path = require('path');
@@ -45,7 +44,19 @@ app.prepare().then(() => {
 
   server.delete('/api/v1/movies/:id', (req, res) => {
     const { id } = req.params;
-    return res.json({ message: `Deleting post of id: ${id}` });
+    const movieIndex = moviesData.findIndex((m) => m.id === id);
+    moviesData.splice(movieIndex, 1);
+
+    const pathToFile = path.join(__dirname, filePath);
+    const stringifiedData = JSON.stringify(moviesData, null, 2);
+
+    fs.writeFile(pathToFile, stringifiedData, (err) => {
+      if (err) {
+        return res.status(422).send(err);
+      }
+
+      return res.json('Movie has been succesfuly added!');
+    });
   });
 
   server.get('*', (req, res) => {
