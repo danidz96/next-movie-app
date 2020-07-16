@@ -1,24 +1,33 @@
+import { useState } from 'react';
 import SideMenu from '../components/sideMenu';
 import Carousel from '../components/carousel';
 import MovieList from '../components/movieList';
 import Footer from '../components/footer';
 import { getMovies, getCategories } from '../actions';
 
-const Home = ({ movies, images, categories }) => (
-  <div className="container">
-    <div className="row">
-      <div className="col-lg-3">
-        <SideMenu categories={categories} />
-      </div>
-      <div className="col-lg-9">
-        <Carousel images={images} />
-        <div className="row">
-          <MovieList movies={movies} />
+const Home = ({ movies, images, categories }) => {
+  const [filter, setFilter] = useState(null);
+
+  const changeCategory = (category) => {
+    setFilter(category);
+  };
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-3">
+          <SideMenu categories={categories} changeCategory={changeCategory} activeCategory={filter} />
+        </div>
+        <div className="col-lg-9">
+          <Carousel images={images} />
+          <h1>Displaying {filter} movies</h1>
+          <div className="row">
+            <MovieList movies={movies} />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 Home.getInitialProps = async () => {
   const movies = await getMovies();
