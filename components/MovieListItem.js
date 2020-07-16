@@ -24,7 +24,7 @@ const MovieListItem = ({ movie }) => {
             </Link>
           </h4>
           <h5>$24.99</h5>
-          <div>{movie.genre}</div>
+          <div className="movie-genre">{movie.genre}</div>
           <p className="card-text">{shorten(movie.description, 100)}</p>
         </div>
         <div className="card-footer">
