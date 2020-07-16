@@ -6,14 +6,14 @@ import { getMovieById, updateMovie } from '../../../actions';
 const EditMovie = ({ movie }) => {
   const handleUpdateMovie = (movie) => {
     updateMovie(movie).then((updatedMovie) => {
-      Router.push(`/movies/${movie.id}`);
+      Router.push('/movies/[id]', `/movies/${movie.id}`);
     });
   };
 
   return (
     <div className="container">
       <h1>Edit the Movie</h1>
-      {JSON.stringify(movie)}
+
       <MovieCreateForm submitButton="Update" initialData={movie} handleFormSubmit={handleUpdateMovie} />
     </div>
   );
