@@ -1,28 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Router from 'next/router';
 import MovieCreateForm from '../../../components/movieCreateForm';
-import { getMovieById } from '../../../actions';
+import { getMovieById, updateMovie } from '../../../actions';
 
-const EditMovie = ({ query }) => {
-  const [movie, setMovie] = useState(null);
-
-  useEffect(() => {
-    const { id } = query;
-    getMovieById(id).then((movie) => {
-      setMovie(movie);
+const EditMovie = ({ movie }) => {
+  const handleUpdateMovie = (movie) => {
+    updateMovie(movie).then((updatedMovie) => {
+      Router.push(`/movies/${movie.id}`);
     });
-  }, []);
+  };
 
   return (
     <div className="container">
       <h1>Edit the Movie</h1>
       {JSON.stringify(movie)}
-      <MovieCreateForm />
+      <MovieCreateForm submitButton="Update" initialData={movie} handleFormSubmit={handleUpdateMovie} />
     </div>
   );
 };
 
-EditMovie.getInitialProps = ({ query }) => {
-  return { query };
+EditMovie.getInitialProps = async ({ query }) => {
+  const movie = await getMovieById(query.id);
+  return { movie };
 };
 
 export default EditMovie;
