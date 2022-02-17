@@ -8,13 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
     "axios": "^0.21.2",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "next": "11.1.1",
-    "node-sass": "^4.14.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "next": "12.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "^1.49.8"
   }
 }
